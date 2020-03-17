@@ -4,13 +4,14 @@ import { HttpClient, HttpParams } from '@angular/common/http';
 import { Product } from 'src/app/models/product';
 
 type GetAllQuery = Partial<Product & { minCreatedAt: number; maxCreatedAt: number }>;
+type CreateBody = Pick<Product, 'name' | 'price'>;
 
 @Injectable({ providedIn: 'root' })
 export class ProductsService {
   private readonly base = '/products';
   constructor(private readonly http: HttpClient) {}
 
-  create(product: Product) {
+  create(product: CreateBody) {
     return this.http.post(this.base, product);
   }
 
