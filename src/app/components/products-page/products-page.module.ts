@@ -4,9 +4,10 @@ import { RouterModule } from '@angular/router';
 
 import { ProductsPageComponent } from './products-page.component';
 import { ProductFormModule } from '../product-form/product-form.module';
+import { ProductTableModule } from '../product-table/product-table.module';
 
 @NgModule({
   declarations: [ProductsPageComponent],
-  imports: [CommonModule, RouterModule.forChild([{ path: '', component: ProductsPageComponent }]), ProductFormModule]
+  imports: [CommonModule, RouterModule.forChild([{ path: '', component: ProductsPageComponent }]), ProductFormModule, ProductTableModule]
 })
 export class ProductsPageModule {}
