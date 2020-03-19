@@ -6,10 +6,20 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { APP_CONFIG } from './config/app-config.model';
+import { AppConfig } from './config/app.config';
+import { InterceptorsModule } from './core/interceptors/interceptor.module';
 
 @NgModule({
   declarations: [AppComponent],
-  imports: [BrowserModule, BrowserAnimationsModule, AppRoutingModule, MatToolbarModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    AppRoutingModule,
+    MatToolbarModule,
+    HttpClientModule,
+    InterceptorsModule.forRoot(APP_CONFIG, AppConfig)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })
