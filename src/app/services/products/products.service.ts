@@ -12,7 +12,7 @@ export class ProductsService {
   constructor(private readonly http: HttpClient) {}
 
   create(product: CreateBody) {
-    return this.http.post(this.base, product);
+    return this.http.post<Product>(this.base, product);
   }
 
   read(query?: GetAllQuery) {
