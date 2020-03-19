@@ -1,0 +1,4 @@
+<mat-form-field class="w-100">
+  <mat-label>Filter products by date</mat-label>
+  <input type="text" matInput ngxDaterangepickerMd autocomplete="off" (change)="selectedDates.emit($event)" />
+</mat-form-field>
