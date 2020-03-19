@@ -1,7 +1,7 @@
 <mat-card class="pb-4">
   Create New Product
   <mat-card-content class="mt-2">
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <form [formGroup]="form">
       <div class="row">
         <div class="col-12 col-md-6">
           <mat-form-field class="w-100">
@@ -21,8 +21,8 @@
     </form>
   </mat-card-content>
   <mat-card-footer class="row">
-    <div class="col-3 offset-6 offset-sm-8 offset-lg-9">
-      <button mat-raised-button color="primary" [disabled]="form.invalid">Create Product</button>
+    <div class="col-3 offset-6 offset-sm-8 offset-md-7">
+      <button mat-raised-button color="primary" [disabled]="form.invalid" (click)="onSubmit()">Create Product</button>
     </div>
   </mat-card-footer>
 </mat-card>
